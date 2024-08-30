@@ -33,7 +33,9 @@ async function main() {
     const withdrawAmount = ethers.parseUnits("75", 18);
     const withdrawTx = await saveERC20.withdraw(withdrawAmount);
 
+    console.log(withdrawTx);
     withdrawTx.wait();
+
 
     const contractBalanceAfterWithdrawal = await saveERC20.getContractBalance();
 
